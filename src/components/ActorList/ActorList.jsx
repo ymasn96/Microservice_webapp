@@ -1,18 +1,20 @@
 import React from 'react'
 import { ActorCard } from '../ActorCard/ActorCard'
+import "./ActorList.css"
 
 export const ActorList = (props) => {
 
-  const { actor } = props
+  const { actors } = props
 
-  const actorJSX = actor.map((a) => {
-    console.log(a)
-    return <ActorCard fname={a.first_name} lname={a.last_name} />
+  const actorJSX = actors.map((a) => {
+    return <ActorCard key={a.id} fname={a.first_name} lname={a.last_name} />
   })
 
   return (
-    <div>
-      {actorJSX}
+    <div className='list-container'>
+      <div className='actor_list'>
+        {actorJSX}
+      </div>
     </div>
   )
 }

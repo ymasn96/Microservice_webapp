@@ -1,0 +1,6 @@
+.actor_card {
+    width: 90%;
+    height: 600px;
+    border: solid 5px darkslategray;
+    margin: 10px;
+}

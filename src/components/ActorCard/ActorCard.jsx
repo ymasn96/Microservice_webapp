@@ -1,8 +1,10 @@
 import React from 'react'
+import "./ActorCard.css"
+
 
 export const ActorCard = (props) => {
 
-    const { id, fname, lname } = props
+    const { fname, lname } = props
 
   return (
     <div className='actor_card'>

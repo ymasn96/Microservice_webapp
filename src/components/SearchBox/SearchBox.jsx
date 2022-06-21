@@ -1,26 +1,18 @@
 import React from 'react'
-// import JSONDATA from '../../MOCK_DATA.json'
 import './SearchBox.css'
 
 export const SearchBox = (props) => {
 
-  const { handleInputText, searchTerm } = props
-
-
+  const { handleInputText, searchterm } = props
 
   return (
     <div className='container'>
         <input 
           onChange={handleInputText} 
-          searchTerm={searchTerm}
+          searchterm={searchterm}
           className='search' 
           type="text" 
           placeholder='Search...' />
-        {/* {JSONDATA.map((val, key) => {
-          return (
-              <p>{val.first_name}</p>
-          )
-        })} */}
     </div>
   )
 }

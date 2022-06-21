@@ -6,7 +6,7 @@ import './App.css'
 
 const App = () => {
 
-  const [ searchTerm, setSearchTerm ] = useState("");
+  const [ searchterm, setSearchTerm ] = useState("");
 
   const [ actor, setActor ] = useState([]);
 
@@ -15,17 +15,19 @@ const App = () => {
     setSearchTerm(inputText);
   }
 
+  let filteredActors = actor.filter(act => act.first_name.includes(searchterm))
+
   useEffect(() => {
     fetch('https://mymicroservice-1655722824933.azurewebsites.net/All_Actors')
     .then(res => res.json())
-    .then(act => setActor(act))
-  }, [searchTerm])
+    .then(actors => setActor(actors))
+  }, [searchterm])
 
   return (
     <>
       <Header />
-      <SearchBox handleInputText={handleInputText} searchTerm={searchTerm} />
-      <ActorList actor={actor} />
+      <SearchBox handleInputText={handleInputText} searchterm={searchterm} />
+      <ActorList actors={filteredActors} />
     </>
   );
 }
