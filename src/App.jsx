@@ -15,7 +15,15 @@ const App = () => {
     setSearchTerm(inputText);
   }
 
-  let filteredActors = actor.filter(act => act.first_name.includes(searchterm))
+  let filteredActors = actor.filter(act => {
+    if (searchterm === "") {
+      return act
+    } else if (act.first_name.toLowerCase().includes(searchterm.toLowerCase()) || act.last_name.toLowerCase().includes(searchterm.toLowerCase())) {
+      return act
+    }
+    
+  })
+
 
   useEffect(() => {
     fetch('https://mymicroservice-1655722824933.azurewebsites.net/All_Actors')

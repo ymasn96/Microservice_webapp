@@ -8,8 +8,7 @@ export const ActorCard = (props) => {
 
   return (
     <div className='actor_card'>
-        <p>{fname}</p>
-        <p>{lname}</p>
+        <p className='actor_text'>{fname} {lname}</p>
     </div>
   )
 }
