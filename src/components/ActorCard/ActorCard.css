@@ -1,11 +1,12 @@
 .actor_card {
     width: 90%;
-    height: 600px;
+    height: 500px;
     border: solid 5px darkslategray;
     border-radius: 10px;
     margin: 10px;
 }
 
 .actor_text {
+    text-align: center;
     color: darkblue;
 }
