@@ -4,9 +4,15 @@
     border: solid 5px darkslategray;
     border-radius: 10px;
     margin: 10px;
+    overflow: auto;
 }
 
 .actor_text {
+    /* position: unset; */
     text-align: center;
     color: darkblue;
+}
+
+.film_title {
+    text-align: center;
 }

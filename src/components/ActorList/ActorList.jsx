@@ -7,7 +7,7 @@ export const ActorList = (props) => {
   const { actors } = props
 
   const actorJSX = actors.map((a) => {
-    return <ActorCard key={a.id} fname={a.first_name} lname={a.last_name} />
+    return <ActorCard key={a.id} fname={a.first_name} lname={a.last_name} films={a.filmList} />
   })
 
   return (
