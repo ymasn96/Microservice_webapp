@@ -7,12 +7,16 @@ import './App.css'
 const App = () => {
 
   const [ searchterm, setSearchTerm ] = useState("");
-
   const [ actor, setActor ] = useState([]);
+  const [ film, setFilm ] = useState([]);
 
   const handleInputText = (event) => {
     const inputText = event.target.value.toLowerCase();
     setSearchTerm(inputText);
+  }
+
+  const handleClick = (e) => {
+    setFilm(console(e));
   }
 
   let filteredActors = actor.filter(act => {
@@ -24,7 +28,6 @@ const App = () => {
     
   })
 
-
   useEffect(() => {
     fetch('https://mymicroservice-1655722824933.azurewebsites.net/All_Actors')
     .then(res => res.json())
@@ -35,7 +38,7 @@ const App = () => {
     <>
       <Header />
       <SearchBox handleInputText={handleInputText} searchterm={searchterm} />
-      <ActorList actors={filteredActors} />
+      <ActorList actors={filteredActors} handleClick={handleClick} film={film} />
     </>
   );
 }
